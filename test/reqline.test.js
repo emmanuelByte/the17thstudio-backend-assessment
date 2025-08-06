@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const ReqlineMessages = require('@app-core/messages/reqline');
+const ReqlineMessages = require('../messages/reqline');
 const reqlineParser = require('../services/reqline/parser');
 const reqlineExecutor = require('../services/reqline/executor');
 

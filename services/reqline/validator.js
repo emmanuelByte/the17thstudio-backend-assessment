@@ -1,5 +1,5 @@
 const { throwAppError, ERROR_CODE } = require('@app-core/errors');
-const ReqlineMessages = require('@app-core/messages/reqline');
+const ReqlineMessages = require('../../messages/reqline');
 
 class ReqlineValidator {
   parseReqlineSyntax(reqlineString) {
