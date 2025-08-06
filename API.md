@@ -12,13 +12,13 @@ http://localhost:8811
 
 ## Endpoint
 
-### POST /reqline
+### POST /
 
 Parse and execute a reqline statement.
 
 #### Request
 
-**URL:** `/reqline`  
+**URL:** `/`  
 **Method:** `POST`  
 **Content-Type:** `application/json`
 
