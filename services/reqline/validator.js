@@ -165,14 +165,19 @@ class ReqlineValidator {
   }
 
   validateUrl(url) {
-    // Simple URL validation compatible with Node.js 8
+    // Simple URL validation compatible with Node.js 8 - NO REGEX
     if (!url || typeof url !== 'string') {
       throwAppError(ReqlineMessages.INVALID_URL_FORMAT, ERROR_CODE.VALIDATIONERR);
     }
 
-    // Basic URL format check
-    const urlPattern = /^https?:\/\/.+/;
-    if (!urlPattern.test(url)) {
+    // Basic URL format check using string methods only
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      throwAppError(ReqlineMessages.INVALID_URL_FORMAT, ERROR_CODE.VALIDATIONERR);
+    }
+
+    // Check for basic URL structure - must have something after protocol
+    const protocolEndIndex = url.indexOf('://');
+    if (protocolEndIndex === -1 || url.length <= protocolEndIndex + 3) {
       throwAppError(ReqlineMessages.INVALID_URL_FORMAT, ERROR_CODE.VALIDATIONERR);
     }
   }
