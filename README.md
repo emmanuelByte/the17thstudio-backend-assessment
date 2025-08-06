@@ -1,4 +1,73 @@
-# Resilience17 Backend Assessment for Node.js
+# Resilience17 Backend Assessment - Reqline Parser
+
+This project implements a **reqline parser** - a curl-like tool that parses HTTP request syntax and executes external requests. The implementation follows MVC architecture with clean OOP concepts, repositories, and functional programming paradigms.
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
+```bash
+yarn install
+```
+
+### 2. Start the Server
+```bash
+yarn start
+```
+
+### 3. Test the API
+```bash
+curl -X POST http://localhost:3000/reqline \
+  -H "Content-Type: application/json" \
+  -d '{"reqline": "HTTP GET | URL https://dummyjson.com/quotes/1"}'
+```
+
+### 4. Run Tests
+```bash
+yarn test
+```
+
+## 📚 Documentation
+
+- **[Complete API Documentation](./API.md)** - Comprehensive endpoint documentation
+
+## 🔧 Reqline Parser Implementation
+
+### Features Implemented
+- ✅ **NO REGEX** - Uses only string manipulation (`split()`, `indexOf()`, `substring()`)
+- ✅ **HTTP Methods** - GET and POST support
+- ✅ **JSON Parsing** - HEADERS, QUERY, BODY validation
+- ✅ **Error Handling** - Comprehensive validation with specific error messages
+- ✅ **Request Timing** - Millisecond precision measurement
+- ✅ **URL Building** - Query parameter appending
+- ✅ **MVC Architecture** - Clean separation of concerns
+
+### Reqline Syntax
+```
+HTTP [GET|POST] | URL [url] | HEADERS [json] | QUERY [json] | BODY [json]
+```
+
+**Example:**
+```
+HTTP GET | URL https://dummyjson.com/quotes/3 | QUERY {"refid": 1920933}
+```
+
+### Architecture
+```
+📁 endpoints/reqline/
+   └── parse.js                 # POST /reqline endpoint
+📁 services/reqline/
+   ├── parser.js               # Main orchestration service
+   ├── validator.js            # Syntax validation (NO REGEX)
+   └── executor.js             # HTTP request execution
+📁 messages/
+   └── reqline.js              # Centralized error messages
+📁 test/
+   └── reqline.test.js         # Comprehensive test suite
+```
+
+---
+
+# Original Backend Assessment Framework
 
 This project follows the MVC architecture and incorporates clean OOP concepts such as repositories and proxies/interactors to abstract dependencies. It also adheres to functional programming paradigms and JavaScript conventions.
 
