@@ -7,7 +7,7 @@ The Reqline Parser is a curl-like tool that parses HTTP request syntax and execu
 ## Base URL
 
 ```
-http://localhost:8811
+https://the17thstudio-backend-assessment.onrender.com
 ```
 
 ## Endpoint
@@ -138,7 +138,7 @@ HTTP [method] | URL [URL value] | HEADERS [header json value] | QUERY [query val
 
 **Simple GET request:**
 ```bash
-curl -X POST http://localhost:8811/reqline \
+curl -X POST https://the17thstudio-backend-assessment.onrender.com/reqline \
   -H "Content-Type: application/json" \
   -d '{
     "reqline": "HTTP GET | URL https://dummyjson.com/quotes/1"
@@ -147,7 +147,7 @@ curl -X POST http://localhost:8811/reqline \
 
 **POST request with data:**
 ```bash
-curl -X POST http://localhost:8811/reqline \
+curl -X POST https://the17thstudio-backend-assessment.onrender.com/reqline \
   -H "Content-Type: application/json" \
   -d '{
     "reqline": "HTTP POST | URL https://dummyjson.com/posts/add | HEADERS {\"Content-Type\": \"application/json\"} | BODY {\"title\": \"Test Post\", \"body\": \"This is a test\", \"userId\": 1}"
@@ -157,7 +157,7 @@ curl -X POST http://localhost:8811/reqline \
 ### Using JavaScript fetch
 
 ```javascript
-const response = await fetch('http://localhost:8811/reqline', {
+const response = await fetch('https://the17thstudio-backend-assessment.onrender.com/reqline', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -177,7 +177,7 @@ console.log(result);
 import requests
 import json
 
-url = "http://localhost:8811/reqline"
+url = "https://the17thstudio-backend-assessment.onrender.com/reqline"
 payload = {
     "reqline": "HTTP GET | URL https://dummyjson.com/quotes/1"
 }
