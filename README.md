@@ -16,7 +16,7 @@ yarn start
 
 ### 3. Test the API
 ```bash
-curl -X POST http://localhost:3000/reqline \
+curl -X POST http://localhost:8811/reqline \
   -H "Content-Type: application/json" \
   -d '{"reqline": "HTTP GET | URL https://dummyjson.com/quotes/1"}'
 ```
